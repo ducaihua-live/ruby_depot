@@ -16,6 +16,7 @@ gem "turbo-rails"
 gem "stimulus-rails"
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails"
+# gem "tailwindcss-rails", "~> 3.3.1"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
@@ -65,3 +66,5 @@ group :test do
 end
 
 gem "hotwire-spark", "~> 0.1.13", group: :development
+
+gem "minitest", "~> 5.27.0"
