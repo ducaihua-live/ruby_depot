@@ -1,0 +1,20 @@
+one:
+  name: image
+  record_type: Product
+  record_id: <%= ActiveRecord::FixtureSet.identify(:one) %>
+  blob_id: <%= ActiveRecord::FixtureSet.identify(:one) %>
+  created_at: <%= Time.current %>
+
+two:
+  name: image
+  record_type: Product
+  record_id: <%= ActiveRecord::FixtureSet.identify(:two) %>
+  blob_id: <%= ActiveRecord::FixtureSet.identify(:two) %>
+  created_at: <%= Time.current %>
+
+pragprog:
+  name: image
+  record_type: Product
+  record_id: <%= ActiveRecord::FixtureSet.identify(:pragprog) %>
+  blob_id: <%= ActiveRecord::FixtureSet.identify(:pragprog) %>
+  created_at: <%= Time.current %>

@@ -1,0 +1,29 @@
+one:
+  id: <%= ActiveRecord::FixtureSet.identify(:one) %>
+  key: <%= SecureRandom.uuid %>
+  filename: lorem.jpg
+  content_type: image/jpeg
+  service_name: test
+  byte_size: 1024
+  checksum: <%= Digest::MD5.base64digest("dummy") %>
+  created_at: <%= Time.current %>
+
+two:
+  id: <%= ActiveRecord::FixtureSet.identify(:two) %>
+  key: <%= SecureRandom.uuid %>
+  filename: rails.png
+  content_type: image/png
+  service_name: test
+  byte_size: 2048
+  checksum: <%= Digest::MD5.base64digest("dummy") %>
+  created_at: <%= Time.current %>
+
+pragprog:
+  id: <%= ActiveRecord::FixtureSet.identify(:pragprog) %>
+  key: <%= SecureRandom.uuid %>
+  filename: lorem.jpg
+  content_type: image/jpeg
+  service_name: test
+  byte_size: 1024
+  checksum: <%= Digest::MD5.base64digest("dummy") %>
+  created_at: <%= Time.current %>
