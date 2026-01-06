@@ -15,7 +15,7 @@ class ProductTest < ActiveSupport::TestCase
     product.image.attach(io: File.open("test/fixtures/files/lorem.jpg"),
     filename: "lorem.jpg", content_type: "image/jpeg")
     assert product.invalid?
-    assert_equal ["has already been taken"], product.errors[:title]
+    assert_equal [ "has already been taken" ], product.errors[:title]
   end
 
 
@@ -31,14 +31,14 @@ class ProductTest < ActiveSupport::TestCase
     product = Product.new(title: "My Book Title", description: "yyy")
     product.price = -1
     assert product.invalid?
-    assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
+    assert_equal [ "must be greater than or equal to 0.01" ], product.errors[:price]
     product.price = 0
     assert product.invalid?
-    assert_equal ["must be greater than or equal to 0.01"], product.errors[:price]
+    assert_equal [ "must be greater than or equal to 0.01" ], product.errors[:price]
     product.price = 1
     assert product.valid?
   end
-  
+
   def new_product(filename, content_type)
     Product.new(
       title: "My Book Title",
@@ -49,7 +49,7 @@ class ProductTest < ActiveSupport::TestCase
       end
   end
 
-  test "image url" do 
+  test "image url" do
     product = new_product("lorem.jpg", "image/jpeg")
     assert product.valid?, "image/jpeg must be valid"
 

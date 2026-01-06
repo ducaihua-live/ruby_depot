@@ -45,13 +45,13 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to product_url(@product)
   end
 
-  #test "should destroy product" do 
+  # test "should destroy product" do
   #  assert_difference("Product.count", -1) do
   #    delete product_url(@product)
   #  end
 
   #  assert_redirected_to products_url
-  #end
+  # end
 
   # Validation failure tests
   test "should not create product with invalid data" do
