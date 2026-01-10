@@ -7,3 +7,9 @@ one:
 two:
   product: pragprog
   cart: one
+
+# Line items for orders (used in mailer tests)
+order_line_item_one:
+  product: pragprog
+  order: one
+  quantity: 1

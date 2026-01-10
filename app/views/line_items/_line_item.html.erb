@@ -1,4 +1,4 @@
-<% if line_item == @current_item %>
+<% if defined?(@current_item) && line_item == @current_item %>
 <tr class="line-item-highlight">
 <% else %>
 <tr>
