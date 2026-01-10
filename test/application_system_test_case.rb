@@ -1,5 +1,7 @@
 require "test_helper"
 
 class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
-  driven_by :selenium, using: :headless_chrome, screen_size: [ 1400, 1400 ]
+  # Use rack_test driver which doesn't require a browser
+  # If you need JavaScript support, install cuprite gem and use: driven_by :cuprite
+  driven_by :rack_test
 end

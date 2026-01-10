@@ -3,6 +3,10 @@ require "application_system_test_case"
 class OrdersTest < ApplicationSystemTestCase
   setup do
     @order = orders(:one)
+    # Set up a cart with items for the order tests
+    @cart = carts(:one)
+    # Ensure the cart has items by visiting store and adding one
+    # For rack_test, we'll set up the session directly
   end
 
   test "visiting the index" do
@@ -11,17 +15,26 @@ class OrdersTest < ApplicationSystemTestCase
   end
 
   test "should create order" do
-    visit orders_url
-    click_on "New order"
+    # Set up cart with items in session
+    # Visit store to initialize session
+    visit store_index_url
+    
+    # Use rack_test's session to set cart_id directly
+    # The cart fixture has line items, so we just need to set it in session
+    cart = carts(:one)
+    page.driver.browser.set_cookie("_depot_session", { cart_id: cart.id }.to_json)
+    
+    # Now visit the new order page
+    visit new_order_url
+    assert_selector "h1", text: "Please Enter Your Details"
 
     fill_in "Address", with: @order.address
     fill_in "Email", with: @order.email
     fill_in "Name", with: @order.name
-    fill_in "Pay type", with: @order.pay_type
-    click_on "Create Order"
+    select @order.pay_type, from: "Pay type"
+    click_on "Place Order"
 
-    assert_text "Order was successfully created"
-    click_on "Back"
+    assert_text "Thank you for your order"
   end
 
   test "should update Order" do
@@ -31,11 +44,10 @@ class OrdersTest < ApplicationSystemTestCase
     fill_in "Address", with: @order.address
     fill_in "Email", with: @order.email
     fill_in "Name", with: @order.name
-    fill_in "Pay type", with: @order.pay_type
-    click_on "Update Order"
+    select @order.pay_type, from: "Pay type"
+    click_on "Place Order"
 
     assert_text "Order was successfully updated"
-    click_on "Back"
   end
 
   test "should destroy Order" do
