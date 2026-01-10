@@ -6,10 +6,21 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should destroy product" do
-    assert_raises ActiveRecord::RecordNotDestroyed do
-      delete product_url(products(:two))
+    product = products(:two)
+    assert_difference("Product.count", -1) do
+      delete product_url(product)
     end
-    assert Product.exists?(products(:two).id)
+    assert_not Product.exists?(product.id)
+  end
+
+  test "should not destroy product with line items" do
+    product = products(:one)  # This product has line items
+    assert_no_difference("Product.count") do
+      delete product_url(product)
+    end
+    assert Product.exists?(product.id)
+    assert_redirected_to products_path
+    # The controller redirects with an alert message when destroy fails
   end
 
   test "should get index" do
