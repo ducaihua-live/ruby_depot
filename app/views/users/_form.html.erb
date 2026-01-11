@@ -11,8 +11,10 @@
     </div>
   <% end %>
 
+  <h2>Enter User Details</h2>
+
   <div class="my-5">
-    <%= form.label :name %>
+    <%= form.label :name, 'Name:' %>
     <%= form.text_field :name, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": user.errors[:name].none?, "border-red-400 focus:outline-red-600": user.errors[:name].any?}] %>
   </div>
 
@@ -22,12 +24,12 @@
   </div>
 
   <div class="my-5">
-    <%= form.label :password %>
+    <%= form.label :password, 'Password:' %>
     <%= form.password_field :password, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": user.errors[:password].none?, "border-red-400 focus:outline-red-600": user.errors[:password].any?}] %>
   </div>
 
   <div class="my-5">
-    <%= form.label :password_confirmation %>
+    <%= form.label :password_confirmation, 'Confirm Password:' %>
     <%= form.password_field :password_confirmation, class: ["block shadow rounded-md border outline-none px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": user.errors[:password_confirmation].none?, "border-red-400 focus:outline-red-600": user.errors[:password_confirmation].any?}] %>
   </div>
 

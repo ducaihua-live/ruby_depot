@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  allow_unauthenticated_access only: %i[ new create ]
   include CurrentCart
   before_action :set_cart, only: %i[ new create ]
   before_action :ensure_cart_isnt_empty, only: %i[ new ]
@@ -33,7 +34,6 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
         Rails.logger.info "Order created: #{@order.inspect}"
 
-        
         @order.charge!(pay_type_params)
         format.html { redirect_to store_index_url, notice: "Thank you for your order." }
         format.json { render :show, status: :created, location: @order }
@@ -69,11 +69,11 @@ class OrdersController < ApplicationController
 
   def pay_type_params
     if order_params[:pay_type] == "Credit card"
-      params.require(:order).permit(:credit_card_number, :expiration_date, :cvv )
+      params.require(:order).permit(:credit_card_number, :expiration_date, :cvv)
     elsif order_params[:pay_type] == "Purchase order"
-      params.require(:order).permit(:po_number )
+      params.require(:order).permit(:po_number)
     else
-      params.require(:order).permit(:routing_number, :account_number )
+      params.require(:order).permit(:routing_number, :account_number)
     end
   end
 
