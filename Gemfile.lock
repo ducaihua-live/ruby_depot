@@ -129,7 +129,7 @@ GEM
     image_processing (1.14.0)
       mini_magick (>= 4.9.5, < 6)
       ruby-vips (>= 2.0.17, < 3)
-    importmap-rails (2.2.2)
+    importmap-rails (2.2.3)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
@@ -352,7 +352,7 @@ GEM
     tailwindcss-ruby (3.4.19-aarch64-linux)
     tailwindcss-ruby (3.4.19-arm-linux)
     tailwindcss-ruby (3.4.19-x86_64-linux)
-    thor (1.4.0)
+    thor (1.5.0)
     thruster (0.1.17)
     thruster (0.1.17-aarch64-linux)
     thruster (0.1.17-x86_64-linux)
@@ -466,7 +466,7 @@ CHECKSUMS
   hotwire-spark (0.1.13) sha256=0a24799b0942fc9b7ea3e560a5aba3f4dd9a6086958a25929894340f920fb499
   i18n (1.14.8) sha256=285778639134865c5e0f6269e0b818256017e8cde89993fdfcbfb64d088824a5
   image_processing (1.14.0) sha256=754cc169c9c262980889bec6bfd325ed1dafad34f85242b5a07b60af004742fb
-  importmap-rails (2.2.2) sha256=729f5b1092f832780829ade1d0b46c7e53d91c556f06da7254da2977e93fe614
+  importmap-rails (2.2.3) sha256=7101be2a4dc97cf1558fb8f573a718404c5f6bcfe94f304bf1f39e444feeb16a
   io-console (0.8.2) sha256=d6e3ae7a7cc7574f4b8893b4fca2162e57a825b223a177b7afa236c5ef9814cc
   irb (1.16.0) sha256=2abe56c9ac947cdcb2f150572904ba798c1e93c890c256f8429981a7675b0806
   jbuilder (2.14.1) sha256=4eb26376ff60ef100cb4fd6fd7533cd271f9998327e86adf20fd8c0e69fabb42
@@ -552,7 +552,7 @@ CHECKSUMS
   tailwindcss-ruby (3.4.19-aarch64-linux) sha256=8abdd5c9afa14b1ee337e37223170165becaa1ad7c4968457d3fc48cddd4e7c6
   tailwindcss-ruby (3.4.19-arm-linux) sha256=94b0764763d80dc5a8fa52c21ea2e57b2fac9a578293886173e7776f55dab22a
   tailwindcss-ruby (3.4.19-x86_64-linux) sha256=9e312c34ec26813fc1917535be3816890e2304be7a320539c242d86d14e12c2a
-  thor (1.4.0) sha256=8763e822ccb0f1d7bee88cde131b19a65606657b847cc7b7b4b82e772bcd8a3d
+  thor (1.5.0) sha256=e3a9e55fe857e44859ce104a84675ab6e8cd59c650a49106a05f55f136425e73
   thruster (0.1.17) sha256=6f3f1de43e22f0162d81cbc363f45ee42a1b8460213856c1a899cbf0d3297235
   thruster (0.1.17-aarch64-linux) sha256=1b3a34b2814185c2aeaf835b5ecff5348cdcf8e77809f7a092d46e4b962a16ba
   thruster (0.1.17-x86_64-linux) sha256=77b8f335075bd4ece7631dc84a19a710a1e6e7102cbce147b165b45851bdfcd3
